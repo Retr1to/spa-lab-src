@@ -27,6 +27,7 @@ Sigue los pasos abajo para crear el proyecto funcional y usar este código.
 6. Usuario demo: `admin` / contraseña: `1234`
 
 ## Estructura incluida en este ZIP
+
 - src/
   - app/
     - login/
@@ -40,5 +41,16 @@ Sigue los pasos abajo para crear el proyecto funcional y usar este código.
   - index.html, main.ts, styles.css
 
 ## Notas
+
 - Este proyecto usa **simulación** (localStorage + RxJS `of()` y `delay()`).
 - Si deseas que te genere el proyecto completo (con `package.json`, `angular.json`) listo para `npm install` y `ng serve`, dímelo y lo preparo — pero el archivo será mayor.
+
+Capturas de la funcionalidad
+Iniciar sesion
+![alt text](image.png)
+
+Menu
+![alt text](image-1.png)
+
+Gestion de clientes
+![alt text](image-2.png)
