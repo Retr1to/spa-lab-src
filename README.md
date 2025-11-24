@@ -1,56 +1,146 @@
-# spa-lab (Angular 17) - Plantilla para laboratorio
+# SPA Lab - Sistema de Gestión con Angular 17 + Material
 
-Este ZIP contiene **la carpeta `src/`** lista para copiar dentro de un proyecto Angular 17 generado con Angular CLI.
-Por motivos de tamaño y compatibilidad, el ZIP **no** incluye `node_modules` ni archivos de configuración CLI completos.
-Sigue los pasos abajo para crear el proyecto funcional y usar este código.
+Proyecto Angular completo con sistema de autenticación, gestión de clientes y **gestión de productos con validaciones personalizadas**.
 
-## Pasos rápidos (recomendado)
+## 🚀 Características
 
-1. Asegúrate de tener Node.js y Angular CLI instalados.
-2. Crear el proyecto base con Angular 17:
-   ```bash
-   ng new spa-lab --routing --style=css
-   cd spa-lab
-   ```
-3. Añadir Angular Material:
-   ```bash
-   ng add @angular/material
-   # seleccionar tema (por ejemplo: Indigo/Pink)
-   ```
-4. Reemplazar la carpeta `src/` creada por Angular CLI con la carpeta `src/` que contiene este ZIP.
-   - En tu proyecto `spa-lab/`, elimina `src/` y copia la `src/` de este ZIP en su lugar.
-5. Instalar dependencias y ejecutar:
+- ✅ Sistema de autenticación con guards
+- ✅ Dashboard con navegación
+- ✅ Gestión de clientes
+- ✅ **Gestión de productos con validaciones personalizadas**
+- ✅ Angular Material UI
+- ✅ Formularios reactivos
+- ✅ Persistencia en localStorage
+
+## 📦 Instalación
+
+1. **Instalar dependencias:**
+
    ```bash
    npm install
-   ng serve --open
    ```
-6. Usuario demo: `admin` / contraseña: `1234`
 
-## Estructura incluida en este ZIP
+2. **Ejecutar el servidor de desarrollo:**
 
-- src/
-  - app/
-    - login/
-    - dashboard/
-    - clientes/
-    - services/ (auth.service, cliente.service)
-    - guards/ (auth.guard)
-    - app-routing.module.ts
-    - app.module.ts
-  - environments/
-  - index.html, main.ts, styles.css
+   ```bash
+   npm start
+   # o
+   npx ng serve --open
+   ```
 
-## Notas
+3. **Abrir en el navegador:**
+   - URL: `http://localhost:4200`
+   - Usuario: `admin`
+   - Contraseña: `1234`
 
-- Este proyecto usa **simulación** (localStorage + RxJS `of()` y `delay()`).
-- Si deseas que te genere el proyecto completo (con `package.json`, `angular.json`) listo para `npm install` y `ng serve`, dímelo y lo preparo — pero el archivo será mayor.
+## 🎯 Módulo de Productos
 
-Capturas de la funcionalidad
-Iniciar sesion
+### Campos del formulario:
+
+- **Código del producto**: Debe iniciar con letra seguida de números (ej: A001)
+- **Nombre**: Mínimo 5 caracteres
+- **Costo**: Debe ser mayor a 0
+- **Precio**: Rango entre 10 y 100
+- **Valor**: Número flotante
+
+### Validaciones implementadas:
+
+#### 1. Precio (10-100)
+
+- **Mensaje de error**: "El precio está fuera de rango."
+
+#### 2. Código del producto
+
+- **Formato**: Letra seguida de números (ej: A001)
+- **Mensaje de error**: "El código debe iniciar con una letra seguida de números (ej: A001)."
+
+#### 3. Nombre del producto
+
+- **Validación**: No nulo, mínimo 5 caracteres
+- **Mensaje de error**: "El nombre del producto debe tener mínimo 5 caracteres."
+
+#### 4. Costo
+
+- **Validación**: Mayor a 0
+- **Mensaje de error**: "Ingrese un costo válido."
+
+## 📂 Estructura del Proyecto
+
+```
+src/
+├── app/
+│   ├── login/              # Componente de login
+│   ├── dashboard/          # Dashboard principal
+│   ├── clientes/           # Gestión de clientes
+│   ├── productos/          # ⭐ Gestión de productos
+│   ├── models/             # Modelos de datos
+│   ├── services/           # Servicios (auth, cliente, producto)
+│   ├── guards/             # Guards de autenticación
+│   ├── validators/         # ⭐ Validadores personalizados
+│   ├── app-routing.module.ts
+│   └── app.module.ts
+├── environments/
+├── index.html
+├── main.ts
+└── styles.css
+```
+
+## 🎨 Tecnologías
+
+- **Angular 17**
+- **Angular Material** (UI Components)
+- **TypeScript**
+- **RxJS**
+- **Formularios Reactivos**
+
+## 🔐 Credenciales de prueba
+
+- **Usuario**: admin
+- **Contraseña**: 1234
+
+## 📝 Comandos útiles
+
+```bash
+# Servidor de desarrollo
+npm start
+
+# Build de producción
+npm run build
+
+# Tests
+npm test
+```
+
+## 💡 Notas
+
+- Los datos se almacenan en **localStorage**
+- Las validaciones son en **tiempo real**
+- Interfaz moderna con **Angular Material**
+- Diseño responsive
+
+## Capturas de la funcionalidad
+
+# Taller 1
+
+### Iniciar sesión
+
 ![alt text](image.png)
 
-Menu
+### Menú
+
 ![alt text](image-1.png)
 
-Gestion de clientes
+### Gestión de clientes
+
 ![alt text](image-2.png)
+
+# Taller 2
+
+### Menu
+
+![alt text](image-3.png)
+
+### Gestion de productos
+
+![alt text](image-4.png)
+![alt text](image-5.png)
